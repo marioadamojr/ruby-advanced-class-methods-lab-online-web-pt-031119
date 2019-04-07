@@ -47,7 +47,7 @@ class Song
 
   def self.alphabetical
     self.all.sort do |song1, song2|
-      song1.name <=> song2.name
+      song1.name <=> song2.name  #we want to sort by the song name, not the songs themselves
     end
   end
 

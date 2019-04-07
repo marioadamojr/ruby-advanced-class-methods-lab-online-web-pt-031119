@@ -68,7 +68,7 @@ def self.new_from_filename(song_name_artist)
   end
 
   def self.destroy_all
-    self.all = []
+    @@all = []
   end
 
 end

@@ -51,11 +51,21 @@ class Song
     end
   end
 
-  def self.new_from_filename(song_name)
+def self.new_from_filename(song_name_artist)
     song = self.new
+    song_info = song_name_artist.split(/[\.\-]/)
+    song.artist_name = song_info[0].strip
+    song.name = song_info[1].strip
+    song
   end
 
-
+  def self.create_from_filename(song_name_artist)
+    song = self.new
+    song_info = song_name_artist.split(/[\.\-]/)
+    song.artist_name = song_info[0].strip
+    song.name = song_info[1].strip
+    @@all << song
+  end
 
   def self.destroy_all
     self.all = []
